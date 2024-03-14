@@ -1,0 +1,23 @@
+<h1>Bienvenido {{ user.username  }}</h1>
+
+<h2>Examen de {{ user.first_name }} {{ user.last_name }}</h2>
+
+<h3>{{ user.email }}</h3>
+
+<h3>{{ user.exam  }}</h3>
+
+<ul>
+    {% for module in user.exam.modules.all %}
+    <li><a href="{% url 'exam:question' module.id %}">
+        {{ module }}
+    </a></li>
+    {% endfor %}
+</ul>
+
+
+
+
+<form action="{%  url 'logout'  %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Salir">
+</form>

@@ -5,6 +5,16 @@ from django.contrib.auth.models import User
 from .forms import CandidateForm
 from .models import Exam
 
+def home(request):
+    user = request.user
+    return render(request, 'exam/home.html', {"user": user})
+
+def question(request, m_id, q_id = 1):
+    exam = request.user.exam
+    questions = exam.breakdown_set.filter(question__module_id = m_id)
+    question = questions[q_id-1].question
+    return render(request, 'exam/question.html', {"question": question})    
+
 # Create your views here.
 def add_candidate(request):
     if request.method =='POST':
