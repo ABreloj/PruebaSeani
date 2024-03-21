@@ -11,11 +11,16 @@ from .models import Exam
 
 def home(request):
     user = request.user
+    if user.is_superuser:
+            return redirect('admin:index')
     return render(request, 'exam/home.html', {"user": user})
 
 @login_required
 def question(request, m_id, q_id = 1):
     exam = request.user.exam
+
+    if q_id < 1:
+        return redirect('exam:home')
     
     if request.method == 'POST':
         questions = exam.breakdown_set.filter(question__module_id = m_id)

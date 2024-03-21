@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Metal&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    <title>Seani 2024 - {% block title %}{% endblock %}</title>
+    <style>
+        body{
+            background-color: rgb(238, 231, 231);
+            color: rgb(0, 0, 0);
+            text-align: center;
+            font-family: "Metal", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 24px;
+        }
+
+        .Portada{
+            display: flex;
+            justify-content: center;
+        }
+
+        .Contraportada{
+            margin: 5%;
+            border: 11px solid rgb(9, 161, 70);
+            box-shadow: 8px 8px 8px 8px;
+        }   
+
+        .todo{
+            margin: 200px;
+        }
+
+        .salir{
+            width: 200px;
+            height: 40px;
+            background-color: aqua;
+            border: none;
+            border-radius: 73px;
+            margin-bottom: 5%;
+        }
+
+    
+        .cuerpo{
+            
+            display: flex;
+            justify-content: center;
+        }
+
+        .contenido{
+            
+            margin: 5%;
+            border: 11px solid rgb(9, 161, 70);
+            box-shadow: 8px 8px 8px 8px;
+        }
+
+        .dentro{
+            margin: 10%;
+        }
+        
+        
+        .li{
+            border: 2px solid black;
+            margin: 8px;
+        }
+
+        .titulo{
+            margin: 5%;
+        }
+
+        .siguiente{
+            width: 200px;
+            height: 40px;
+            background-color: aqua;
+            border: none;
+            border-radius: 73px;
+            margin-bottom: 5%;
+        }
+
+        .pregunta{
+            background-color: chartreuse;
+            margin: 20px;          
+            display: inline-block;
+            width: 200px;
+            height: 50px;
+            border-radius: 73px;
+            
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>

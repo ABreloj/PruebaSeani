@@ -1,3 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{%  endblock  %}
+
+{% block content %}
+<div  class="cuerpo">
+
+
+    <div class="contenido">
+
+
 <h1>Bienvenido {{ user.username  }}</h1>
 
 <h2>Examen de {{ user.first_name }} {{ user.last_name }}</h2>
@@ -6,18 +17,23 @@
 
 <h3>{{ user.exam  }}</h3>
 
-<ul>
+<ul >
     {% for module in user.exam.modules.all %}
-    <li><a href="{% url 'exam:question' module.id %}">
+    <li class="li"> <a href="{% url 'exam:question' module.id %}">
         {{ module }}
     </a></li>
     {% endfor %}
 </ul>
+
+</div>
+</div>
+
 
 
 
 
 <form action="{%  url 'logout'  %}" method="post">
     {% csrf_token %}
-    <input type="submit" value="Salir">
+    <input type="submit" value="Salir" class="salir">
 </form>
+{% endblock %}
