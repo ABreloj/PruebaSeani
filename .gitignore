@@ -246,3 +246,18 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/django,windows,macos,linux
+.vercel
+*.log
+*.pyc
+__pycache__
+db.sqlite3
+media
+
+# Environments 
+.env 
+.venv 
+env/ 
+venv/ 
+ENV/ 
+env.bak/ 
+venv.bak/ 
